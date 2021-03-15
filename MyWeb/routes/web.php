@@ -32,11 +32,11 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
-Route::get('city/create',function(){
+Route::get('post/create',function(){
   DB::table('city')->insert([
       'id'=> 112,
-     'region_id'=>'CA',
-     'country'=>'Canada'
+     'title'=>'CA',
+     'body'=>'Canada'
 ]);
   
 });
@@ -52,4 +52,6 @@ Route::get('blog/create',function(){
     return view('posts.create');
 });
 
-Route::post('client/create',[BlogController::class, 'create_post'])->name('create-post');
+Route::post('blog/create',[BlogController::class, 'create_post'])->name('create-post');
+
+Route::get('post/{id}', [BlogController::class, 'get_posts']);
