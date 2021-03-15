@@ -8,6 +8,7 @@
 </head>
 <body>
 <form method="POST" action="{{route('create-post')}}">
+ @csrf
   <input type="text" name="title" placeholder="Title of your post" required>
   <input type="text" name="body" placeholder="Type your post" required>
   <button type="submit">Create post</button>

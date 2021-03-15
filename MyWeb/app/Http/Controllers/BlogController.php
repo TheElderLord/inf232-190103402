@@ -13,7 +13,12 @@ class BlogController extends Controller
         return view('posts.index')->with(['posts'=>$posts]);
 
     }
-    public function create(Request $request){
-        dd($request);
-    }
+    public function create_post(Request $request){
+        Post::create([
+            'title'=>$request->title,
+            'body'=> $request->body
+        ]);
+        
+    return back();
+}
 }

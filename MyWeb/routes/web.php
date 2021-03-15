@@ -52,4 +52,4 @@ Route::get('blog/create',function(){
     return view('posts.create');
 });
 
-Route::post('client/create',[BlogController::class, 'create'])->name('create-post');
+Route::post('client/create',[BlogController::class, 'create_post'])->name('create-post');
