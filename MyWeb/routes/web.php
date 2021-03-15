@@ -48,3 +48,8 @@ return $post;
 
 Route::get('blog/index',[BlogController::class,'index']);
 
+Route::get('blog/create',function(){
+    return view('posts.create');
+});
+
+Route::post('client/create',[BlogController::class, 'create'])->name('create-post');

@@ -13,4 +13,7 @@ class BlogController extends Controller
         return view('posts.index')->with(['posts'=>$posts]);
 
     }
+    public function create(Request $request){
+        dd($request);
+    }
 }
