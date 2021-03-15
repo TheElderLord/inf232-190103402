@@ -31,15 +31,16 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
-Route::get('post/create',function(){
-   DB::table('post')->insert([
-     
-     'title'=>'blog',
-     'body'=>'HTML body' 
-   ]);
+Route::get('city/create',function(){
+  DB::table('city')->insert([
+      'id'=> 112,
+     'region_id'=>'CA',
+     'country'=>'Canada'
+]);
+  
 });
 
 Route::get('post',function(){
-$post = Post::find(11);
+$post = Post::find(111);
 return $post;
 });
