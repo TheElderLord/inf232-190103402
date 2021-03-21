@@ -28,4 +28,7 @@ class PostTest extends TestCase
         $response = $this->get('/post/111');
         $response->assertViewHas('post') ;
     }
+    public function hh(){
+        return aa;
+    }
 }
