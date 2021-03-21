@@ -31,4 +31,7 @@ class PostTest extends TestCase
     public function hh(){
         return aa;
     }
+    public function ff(){
+        return aa;
+    }
 }
