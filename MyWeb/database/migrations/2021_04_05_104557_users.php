@@ -15,10 +15,12 @@ class Users extends Migration
     {
         //
         Schema::create('user', function (Blueprint $table) {
+            $table->id();
             $table->string('name');
             $table->string('surname');
             $table->string('email');
             $table->string('image');
+            $table->timestamps();
         });
     }
 

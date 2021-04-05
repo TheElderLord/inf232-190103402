@@ -1,3 +1,4 @@
+
 {
     "name": "laravel/laravel",
     "type": "project",
@@ -12,9 +13,12 @@
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^6.3.1|^7.0.1",
-        "laravel/framework": "^7.29",
+        "laravel/f,ramework": "^7.29",
         "laravel/tinker": "^2.5"
     },
+    "require": {
+    "laravelcollective/html": "~5.0"
+},
     "require-dev": {
         "facade/ignition": "^2.0",
         "fakerphp/faker": "^1.9.1",

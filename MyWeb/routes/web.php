@@ -57,8 +57,9 @@ Route::post('blog/create',[BlogController::class, 'create_post'])->name('create-
 
 Route::get('post/{id}', [BlogController::class, 'get_posts']);
 
-Route::get('user/create',function(){
+Route::get('user/creat',function(){
     DB::table('user')->insert([
+        'id'=>115,
       'name' => 'Arsen',
       'surname'=>'Myngbayev',
       'email' => 'Holy.s.hit9137@gmail.com',
@@ -72,3 +73,11 @@ Route::get('user',function(){
     });
 
 Route::get('user/list',[UserController::class,'user_list']);
+
+
+Route::get('user/create',function(){
+    return view('user.create');
+});
+
+Route::post('user/create',[UserController::class,'store_user'])->name('create_user');
+
