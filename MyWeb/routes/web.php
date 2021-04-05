@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 use App\Post;
 use App\Http\Controllers\BlogController;
+use App\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,3 +56,17 @@ Route::get('blog/create',function(){
 Route::post('blog/create',[BlogController::class, 'create_post'])->name('create-post');
 
 Route::get('post/{id}', [BlogController::class, 'get_posts']);
+
+Route::get('user/create',function(){
+    DB::table('user')->insert([
+      'name' => 'Arsen',
+      'surname'=>'Myngbayev',
+      'email' => 'Holy.s.hit9137@gmail.com',
+      'image' =>  'KK'
+    ]); 
+});
+
+Route::get('user',function(){
+    $user = User::find(1);
+    return $user;
+    });
