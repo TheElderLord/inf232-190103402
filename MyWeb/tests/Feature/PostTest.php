@@ -20,7 +20,7 @@ class PostTest extends TestCase
         $response->assertStatus(200);
     }
     public function test_unex_post(){
-        $response = $this->get('/post/5445');
+        $response = $this->get('/post/54405');
 
         $response->assertStatus(404);
     }
@@ -28,10 +28,5 @@ class PostTest extends TestCase
         $response = $this->get('/post/111');
         $response->assertViewHas('post') ;
     }
-    public function hh(){
-        return aa;
-    }
-    public function ff(){
-        return aa;
-    }
+    
 }
