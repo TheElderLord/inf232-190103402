@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\DB;
 use App\Post;
 use App\Http\Controllers\BlogController;
 use App\User;
-
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -70,3 +70,5 @@ Route::get('user',function(){
     $user = User::find(1);
     return $user;
     });
+
+Route::get('user/list',[UserController::class,'user_list']);
