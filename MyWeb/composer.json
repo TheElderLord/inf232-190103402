@@ -16,9 +16,7 @@
         "laravel/f,ramework": "^7.29",
         "laravel/tinker": "^2.5"
     },
-    "require": {
-    "laravelcollective/html": "~5.0"
-},
+    
     "require-dev": {
         "facade/ignition": "^2.0",
         "fakerphp/faker": "^1.9.1",

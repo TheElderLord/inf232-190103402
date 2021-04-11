@@ -6,6 +6,7 @@ use App\Post;
 use App\Http\Controllers\BlogController;
 use App\User;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UploadController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -80,4 +81,7 @@ Route::get('user/create',function(){
 });
 
 Route::post('user/create',[UserController::class,'store_user'])->name('create_user');
+
+Route::view('upload', 'upload');
+Route::post('upload',[UploadController::class,'index']);
 

@@ -3,24 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\UploadFile;
 
 class UploadController extends Controller
 {
-   public function showUploadFile(Request $request){
-    $file = $request->file('image');
-    
-    echo 'File Name: '.$file->getClientOriginalName();
-    echo '<br>';
+   function index(Request $request) {
+      $this->validate($request, [
+      'name' => 'required',
+      'surname' => 'required',
+      'email'=>'required',
+      'image'=>'required'
+      ]);
 
-    echo 'File extension: '.$file->getClientOriginalExtension();
-    echo '<br>';
-    echo 'File real path: '.$file->getRealPath();
-    echo '<br>';
-     echo 'File size: '.$file->getSize();
-    echo '<br>';
-    echo 'File Mime Type: '.$file->getMimeType();
-
-    $destinationPath = 'uploads';
-    $file->move($destinationPath,$file->getClientOriginalName());
-   }
+        UploadFile::create([
+          'name'=>$request->name,
+          'surname'=>$request->surname,
+          'email'=>$request->email
+          ]);
+          return $request->file('photos')->store('docs');
+    }   
 }

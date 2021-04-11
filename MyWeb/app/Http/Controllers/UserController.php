@@ -19,7 +19,7 @@ class UserController extends Controller
            'name'=> $request->name,
            'surname'=> $request->surname,
            'email'=> $request->email,
-           'image'=> $file = $request->file('image')
+           'image'=> $request->file('image')
        ]);
        return back();
     }
